@@ -118,6 +118,19 @@ namespace ContactManager.Models
             return contact;
         }
 
+        //(-1, "Test", "User", "44-444", "add@domain.com");
+        public static Contact CreateContact(System.Int32 id, string firstName, string lastName, string phone, string email)
+        {
+            Contact contact = new Contact();
+            contact.Id = id;
+            contact.FirstName = firstName;
+            contact.LastName = lastName;
+            contact.Phone = phone;
+            contact.Email = email;
+            return contact;
+
+        }
+
         #endregion
         #region Primitive Properties
     
