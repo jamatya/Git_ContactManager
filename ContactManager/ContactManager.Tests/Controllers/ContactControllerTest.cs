@@ -90,19 +90,19 @@ namespace ContactManager.Tests.Controllers
         }
 
 
-        [TestMethod]
-        public void CreateInvalidContact()
-        {
-            // Arrange
-            var contact = new Contact();
-            _service.Setup(s => s.CreateContact(contact)).Returns(false);
-            var controller = new ContactController(_service.Object);
+        //[TestMethod]
+        //public void CreateInvalidContact()
+        //{
+        //    // Arrange
+        //    var contact = new Contact();
+        //    _service.Setup(s => s.CreateContact(contact)).Returns(false);
+        //    var controller = new ContactController(_service.Object);
 
-            // Act
-            var result = (ViewResult)controller.Create(contact);
+        //    // Act
+        //    var result = (ViewResult)controller.Create(contact);
 
-            // Assert
-            Assert.AreEqual("Create", result.ViewName);
-        }
+        //    // Assert
+        //    Assert.AreEqual("Create", result.ViewName);
+        //}
     }
 }
