@@ -24,10 +24,10 @@ namespace ContactManager.Models
         public bool ValidateContact(Contact contactToValidate)
         {
             if (contactToValidate.FirstName == null ||  contactToValidate.FirstName.Trim().Length == 0)
-                _validationDictionary.AddError("FirstName", "First name is requiried.");
+                _validationDictionary.AddError("FirstName", "First name is required.");
             if (contactToValidate.LastName == null || contactToValidate.LastName.Trim().Length == 0)
                 _validationDictionary.AddError("LastName", "Last name is required.");
-            if (contactToValidate.Phone.Length > 10)// && !Regex.IsMatch(contactToValidate.Phone, @"(\(\d{3}\) ?)|(\d{3}-))?\d{3}-\d{4}"))
+            if (contactToValidate.Phone.Length > 0 && !Regex.IsMatch(contactToValidate.Phone, @"((\(\d{3}\) ?)|(\d{3}-))?\d{3}-\d{4}"))
                 _validationDictionary.AddError("Phone", "Invalid phone number.");
             if (contactToValidate.Email.Length > 0 && !Regex.IsMatch(contactToValidate.Email, @"^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$"))
                 _validationDictionary.AddError("Email", "Invalid email address.");
